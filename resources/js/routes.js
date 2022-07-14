@@ -1,10 +1,10 @@
 import Vue from 'vue';
 
-import RouterVue from 'vue-router';
+import VueRouter from 'vue-router';
 
-Vue.use(RouterVue);
+Vue.use(VueRouter);
 
-import HomeComp from './partials/HomeComp'
+import HomeComp from './pages/HomeComp'
 
 const router = new VueRouter({
 	mode: 'history', // cosi resta in cronologia i cambi di pagina anche essendo una singlepageapplication

@@ -32,8 +32,8 @@ export default {
     },
     mounted() {
         this.getApi();
-    },
-    components: { HeadreComp }
+    }
+
 }
 </script>
 
