@@ -1,24 +1,20 @@
 <template>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+        <nav class="navbar navbar-expand-lg navbar-light align-items-center">
+            <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNav">
                 <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
+                    <li class="nav-item font-weight-bolder mx-2 ">
+                        <router-link class="" :to="{name:'home'}">HOME</router-link>
+                    </li>
+                    <li class="nav-item font-weight-bolder mx-2">
+                        <router-link class="" :to="{name:'blog'}">BLOG</router-link>
+                    </li>
+                    <li class="nav-item font-weight-bolder mx-2">
+                        <router-link class="" :to="{name:'about'}">CHI SIAMO</router-link>
+                    </li>
+                    <li class="nav-item font-weight-bolder mx-2">
+                        <router-link class="" :to="{name:'contacts'}">CONTATTI</router-link>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -35,5 +31,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+header{
+    height: 60px;
+    background-color: grey;
+
+    nav{
+        height: 100%;
+
+        ul{
+            li{
+                a{
+                    color: black;
+                    &.active,
+                    &:hover{
+                        color: green;
+                    }
+                }
+            }
+        }
+    }
+}
 
 </style>
