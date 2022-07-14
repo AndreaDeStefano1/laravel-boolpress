@@ -34,7 +34,7 @@ import App from './App.vue'
 
 const app = new Vue({
     el: '#app',
-
+    router,
     render: h => h(App)
     //questo è il metodo per renderizzare app nell elmento inizializzato a riga 34
 });
