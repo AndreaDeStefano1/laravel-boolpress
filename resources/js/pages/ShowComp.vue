@@ -1,6 +1,11 @@
 <template>
     <div>
-        <h1>{{ post.title }}</h1>
+        <h1>Titolo: {{ post.title }}</h1>
+        <h4>Tags:</h4>
+        <span class="tag-badge" v-for="tag in post.tags" :key="tag.id">
+            {{ tag.name }}
+        </span>
+        <h3 class="mt-3">Cosa dice il post:</h3>
         <p>{{ post.text }}</p>
     </div>
 </template>
@@ -13,7 +18,8 @@
             return{
                 post: {
                     title: '',
-                    text: ''
+                    text: '',
+                    tags:[]
                 },
                 apiUrl: '/api/posts'
             }
@@ -25,7 +31,8 @@
                     console.log('ciao',res.data);
                     this.post.title = res.data.title;
                     this.post.text = res.data.text;
-
+                    this.post.tags = res.data.tags
+                    console.log(this.post.tags);
                 });
             }
         },
@@ -38,5 +45,11 @@
 </script>
 
 <style lang="scss" scoped>
-
+.tag-badge{
+    color: white;
+    background-color: rgb(11, 172, 11);
+    border-radius: 20px;
+    margin-right: 10px;
+    padding: 3px 10px;
+}
 </style>

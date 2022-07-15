@@ -7,8 +7,8 @@ Vue.use(VueRouter);
 import HomeComp from './pages/HomeComp';
 import BlogComp from './pages/BlogComp';
 import ContactsComp from './pages/ContactsComp';
-import AboutComp from './pages/AboutComp'
-import ShowComp from './pages/ShowComp'
+import AboutComp from './pages/AboutComp';
+import ShowComp from './pages/ShowComp';
 
 const router = new VueRouter({
 	mode: 'history',
