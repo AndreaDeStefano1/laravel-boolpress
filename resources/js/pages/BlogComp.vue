@@ -10,21 +10,27 @@
         </ul>
         <nav aria-label="...">
             <ul class="pagination justify-content-center">
+
                 <li v-if="pagination.current - 1 > 0" class="page-item " @click="getApi(pagination.current - 1)">
                     <a class="page-link" href="#" tabindex="-1">Previous</a>
                 </li>
+
                 <li v-if="pagination.current - 1 > 0" @click="getApi(pagination.current - 1)" class="page-item">
                     <a class="page-link" href="#">{{ pagination.current - 1 }}</a>
-                    </li>
+                </li>
+
                 <li class="page-item active">
                     <a class="page-link" href="#">{{ pagination.current }}</a>
                 </li>
-                <li class="page-item">
-                    <a v-if="pagination.current + 1 <= pagination.last" @click="getApi(pagination.current + 1)" class="page-link" href="#">{{ pagination.current + 1 }}</a>
-                    </li>
+
+                <li v-if="pagination.current + 1 <= pagination.last" class="page-item">
+                    <a  @click="getApi(pagination.current + 1)" class="page-link" href="#">{{ pagination.current + 1 }}</a>
+                </li>
+
                 <li v-if="pagination.current + 1 <= pagination.last" class="page-item" @click="getApi(pagination.current + 1)">
                     <a class="page-link" href="#">Next</a>
                 </li>
+
             </ul>
         </nav>
     </div>
@@ -37,7 +43,6 @@ import PostComp from '../partials/PostComp';
         name:'BlogComp',
         components:{
             PostComp,
-            PaginationComp
         },
         data(){
             return {
@@ -53,7 +58,7 @@ import PostComp from '../partials/PostComp';
             getApi(page) {
                 axios.get(this.apiUrl + '?page=' + page )
                     .then(res => {
-                    console.log(res.data);
+                    //console.log(res.data);
                     this.posts = res.data.posts.data;
                     this.pagination = {
                         current: res.data.posts.current_page,

@@ -3,7 +3,7 @@
 
 
             <li>
-                <h3>{{ post.title }}</h3>
+                <router-link :to="{name:'show',params:{slug: post.slug}}">{{ post.title }}</router-link>
                 <p>{{ post.text }} </p>
             </li>
 

@@ -14,4 +14,10 @@ class ApiController extends Controller
         // return response()->json($posts);
         return response()->json(compact('posts'));
     }
+
+    public function show($slug){
+        $post = Post::where('slug', $slug)->first();
+
+        return response()->json($post);
+    }
 }

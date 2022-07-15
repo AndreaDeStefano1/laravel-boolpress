@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('posts','Api\ApiController@index');
+Route::get('posts/show/{slug}','Api\ApiController@show');
